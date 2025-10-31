@@ -1,0 +1,5 @@
+SUPABASE_URL=https://nmzbtfwemhfyteubcgjj.supabase.co
+# Get service_role key from Supabase Dashboard -> Settings -> API -> service_role key
+# The current key below is the anon key - you need to replace it with service_role key
+SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5temJ0ZndlbWhmeXRldWJjZ2pqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA2NjE0ODcsImV4cCI6MjA3NjIzNzQ4N30.2xcISsul5wE-cRaBYyog9zMKxh6cKwHYExGvg5G_Zu8
+
