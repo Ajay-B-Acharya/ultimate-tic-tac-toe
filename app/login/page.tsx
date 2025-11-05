@@ -73,30 +73,32 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 p-4">
+    <main className="min-h-screen flex items-center justify-center bg-[#0a0e27] p-4 cyberpunk-grid">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-purple-500/5 to-pink-500/0"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
 
       <div className="w-full max-w-md relative z-10">
-        <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700">
+        <Card className="bg-gradient-to-br from-slate-900/80 via-purple-900/60 to-cyan-900/80 backdrop-blur-xl border-cyan-500/30" style={{boxShadow: '0 0 50px rgba(6, 182, 212, 0.2), inset 0 0 50px rgba(6, 182, 212, 0.05)'}}>
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+            <CardTitle className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent neon-text">
               Ultimate Tic Tac Toe
             </CardTitle>
-            <CardDescription className="text-slate-300">
+            <CardDescription className="text-cyan-300">
               Sign in to your account or create a new one
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 bg-slate-700">
-                <TabsTrigger value="login" className="data-[state=active]:bg-purple-600">
+              <TabsList className="grid w-full grid-cols-2 bg-slate-900/60">
+                <TabsTrigger value="login" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-cyan-600 text-slate-300">
                   Login
                 </TabsTrigger>
-                <TabsTrigger value="register" className="data-[state=active]:bg-purple-600">
+                <TabsTrigger value="register" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-cyan-600 text-slate-300">
                   Register
                 </TabsTrigger>
               </TabsList>
@@ -105,24 +107,24 @@ export default function LoginPage() {
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div className="space-y-2">
                     <div className="relative">
-                      <Mail className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+                      <Mail className="absolute left-3 top-3 h-4 w-4 text-cyan-400" />
                       <Input
                         type="email"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                        className="pl-10 bg-slate-900/50 border-cyan-600/30 text-cyan-100 placeholder:text-cyan-400/60 focus:border-cyan-500 focus:ring-cyan-500/50"
                         required
                       />
                     </div>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+                      <Lock className="absolute left-3 top-3 h-4 w-4 text-cyan-400" />
                       <Input
                         type="password"
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                        className="pl-10 bg-slate-900/50 border-cyan-600/30 text-cyan-100 placeholder:text-cyan-400/60 focus:border-cyan-500 focus:ring-cyan-500/50"
                         required
                       />
                     </div>
@@ -130,7 +132,8 @@ export default function LoginPage() {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-500 hover:via-pink-500 hover:to-blue-500"
+                    className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 text-white font-bold neon-text"
+                    style={{boxShadow: '0 0 20px rgba(192, 38, 211, 0.4)'}}
                   >
                     {loading ? (
                       <>
@@ -148,35 +151,35 @@ export default function LoginPage() {
                 <form onSubmit={handleRegister} className="space-y-4">
                   <div className="space-y-2">
                     <div className="relative">
-                      <Mail className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-cyan-400" />
                       <Input
                         type="email"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                        className="pl-10 bg-slate-900/50 border-cyan-600/30 text-cyan-100 placeholder:text-cyan-400/60 focus:border-cyan-500 focus:ring-cyan-500/50"
                         required
                       />
                     </div>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-cyan-400" />
                       <Input
                         type="password"
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                        className="pl-10 bg-slate-900/50 border-cyan-600/30 text-cyan-100 placeholder:text-cyan-400/60 focus:border-cyan-500 focus:ring-cyan-500/50"
                         required
                       />
                     </div>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-cyan-400" />
                       <Input
                         type="password"
                         placeholder="Confirm Password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                        className="pl-10 bg-slate-900/50 border-cyan-600/30 text-cyan-100 placeholder:text-cyan-400/60 focus:border-cyan-500 focus:ring-cyan-500/50"
                         required
                       />
                     </div>
@@ -184,7 +187,8 @@ export default function LoginPage() {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-500 hover:via-pink-500 hover:to-blue-500"
+                    className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 text-white font-bold neon-text"
+                    style={{boxShadow: '0 0 20px rgba(192, 38, 211, 0.4)'}}
                   >
                     {loading ? (
                       <>
@@ -200,8 +204,8 @@ export default function LoginPage() {
             </Tabs>
 
             {message && (
-              <Alert className={`mt-4 ${message.includes('successful') ? 'border-green-500 bg-green-500/10' : 'border-red-500 bg-red-500/10'}`}>
-                <AlertDescription className={message.includes('successful') ? 'text-green-400' : 'text-red-400'}>
+              <Alert className={`mt-4 ${message.includes('successful') ? 'border-green-500 bg-green-500/10' : 'border-red-500 bg-red-500/10'}`} style={{boxShadow: message.includes('successful') ? '0 0 20px rgba(74, 222, 128, 0.3)' : '0 0 20px rgba(248, 113, 113, 0.3)'}}>
+                <AlertDescription className={message.includes('successful') ? 'text-green-400 neon-text' : 'text-red-400 neon-text'}>
                   {message}
                 </AlertDescription>
               </Alert>

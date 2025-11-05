@@ -9,11 +9,14 @@ Ultimate Tic-Tac-Toe is a more strategic variant of the classic game. Instead of
 ## ✨ Features
 
 - **Interactive UI**: Beautiful, modern interface with smooth animations
-- **AI Opponent**: Challenge yourself against a minimax AI with strategic depth
+- **Two Game Modes**: 
+  - 🎮 **Play vs AI**: Challenge yourself against a minimax AI with strategic depth
+  - 👥 **Play with a Friend**: Local multiplayer mode for same-device gameplay
 - **User Authentication**: Sign up and log in with email/password using Supabase Auth
 - **Persistent Game State**: Your games are saved in the cloud
 - **Protected Routes**: Secure game sessions with user authentication
 - **Responsive Design**: Optimized for all screen sizes
+- **Mode Selection**: Choose your preferred game mode before starting
 
 ## 🚀 Getting Started
 
@@ -84,9 +87,11 @@ Ultimate Tic-Tac-Toe is a more strategic variant of the classic game. Instead of
 │   ├── login/             # Login/register page
 │   └── page.tsx           # Main game page
 ├── components/            # React components
+│   ├── mode-select.tsx    # Mode selection screen
 │   ├── game-board.tsx     # Main game board
 │   ├── mini-board.tsx    # Individual 3×3 board
 │   ├── game-status.tsx   # Game status display
+│   ├── game-controls.tsx # Game control buttons
 │   └── ui/               # Reusable UI components
 ├── lib/                  # Core game logic
 │   ├── game-engine.ts    # Game rules and state

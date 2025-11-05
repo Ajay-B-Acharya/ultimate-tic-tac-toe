@@ -123,3 +123,139 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Holographic panel effect */
+.holographic-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.1) 0%,
+    rgba(138, 43, 226, 0.05) 50%,
+    rgba(0, 217, 255, 0.1) 100%
+  );
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 20px rgba(0, 217, 255, 0.2),
+    inset 0 0 20px rgba(0, 217, 255, 0.05);
+}
+
+.holographic-panel:hover {
+  border-color: rgba(0, 217, 255, 0.6);
+  box-shadow: 
+    0 0 30px rgba(0, 217, 255, 0.4),
+    inset 0 0 30px rgba(0, 217, 255, 0.1);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-neon-glow {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.animate-neon-flicker {
+  animation: neon-flicker 3s linear infinite;
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-grid {
+  background-size: 50px 50px;
+  animation: grid-pattern 20s linear infinite;
+}
+
+.animate-shimmer {
+  background-size: 1000px 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Tron-style digital grid background with circuit animation */
+.cyberpunk-grid {
+  background-color: #000;
+  background-image: 
+    linear-gradient(rgba(0, 217, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(rgba(0, 255, 255, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 2px, transparent 2px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  animation: grid-slide 20s linear infinite;
+}
+
+@keyframes grid-slide {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  }
+}
+
+/* Neon text glow utility */
+.neon-text {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor;
+}
+
+/* Neon border glow */
+.neon-border {
+  box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    inset 0 0 5px currentColor;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% { clip-path: inset(40% 0 61% 0); }
+  20% { clip-path: inset(92% 0 1% 0); }
+  40% { clip-path: inset(43% 0 1% 0); }
+  60% { clip-path: inset(25% 0 58% 0); }
+  80% { clip-path: inset(54% 0 7% 0); }
+  100% { clip-path: inset(58% 0 43% 0); }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s linear infinite;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}

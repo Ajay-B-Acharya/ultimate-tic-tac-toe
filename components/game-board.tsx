@@ -12,8 +12,8 @@ export default function GameBoard({ gameState, onMove, loading }: GameBoardProps
   if (!gameState) return null
 
   return (
-    <div className="bg-gradient-to-br from-slate-800/80 via-slate-900/80 to-slate-800/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-purple-500/20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-3xl"></div>
+    <div className="holographic-panel rounded-3xl p-8 relative" style={{boxShadow: '0 0 50px rgba(0, 217, 255, 0.4), inset 0 0 50px rgba(0, 217, 255, 0.1)'}}>
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-cyan-500/5 rounded-3xl pointer-events-none"></div>
       <div className="grid grid-cols-3 gap-6 relative z-10">
         {gameState.boards.map((board: any, boardIndex: number) => (
           <MiniBoard

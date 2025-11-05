@@ -15,6 +15,21 @@ export class MinimaxAgent {
   get_best_move(game_state: MetaBoard): [number, number] | null {
     this.nodes_evaluated = 0
 
+    // Easy mode: random move
+    if (this.depth === 0) {
+      const available_boards = game_state.get_available_boards()
+      if (available_boards.length === 0) return null
+      
+      const random_board_idx = available_boards[Math.floor(Math.random() * available_boards.length)]
+      const board = game_state.boards[random_board_idx]
+      const available_moves = board.get_available_moves()
+      
+      if (available_moves.length === 0) return null
+      const random_position = available_moves[Math.floor(Math.random() * available_moves.length)]
+      
+      return [random_board_idx, random_position]
+    }
+
     const available_boards = game_state.get_available_boards()
     let best_score = Number.NEGATIVE_INFINITY
     let best_move: [number, number] | null = null

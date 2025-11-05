@@ -73,13 +73,24 @@ export async function createNewGame(userId: string): Promise<string> {
 }
 
 // Get game - loads from cache or Supabase
-export async function getGame(gameId: string): Promise<GameData | null> {
+export async function getGame(gameId: string, difficulty?: "easy" | "medium" | "hard"): Promise<GameData | null> {
   if (games.has(gameId)) {
-    return games.get(gameId)!
+    const cachedGame = games.get(gameId)!
+    // Update AI agent if difficulty is provided
+    if (difficulty) {
+      const depth = difficulty === "easy" ? 0 : difficulty === "medium" ? 2 : 5
+      cachedGame.ai_agent = new MinimaxAgent(2, depth)
+    }
+    return cachedGame
   }
 
   const gameData = await loadGameFromDB(gameId)
   if (gameData) {
+    // Update AI agent if difficulty is provided
+    if (difficulty) {
+      const depth = difficulty === "easy" ? 0 : difficulty === "medium" ? 2 : 5
+      gameData.ai_agent = new MinimaxAgent(2, depth)
+    }
     games.set(gameId, gameData)
   }
   return gameData

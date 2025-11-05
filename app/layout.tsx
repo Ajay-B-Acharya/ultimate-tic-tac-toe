@@ -11,7 +11,7 @@ const geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Ultimate Tic Tac Toe",
   description: "Play Ultimate Tic Tac Toe against an AI opponent",
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -23,8 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
         <AuthProvider>
-          <header className="w-full p-4 bg-slate-900 text-slate-200 flex justify-between items-center">
-            <a href="/" className="font-bold">Ultimate Tic Tac Toe</a>
+          <header className="w-full p-4 bg-[#0a0e27] border-b border-cyan-500/20 flex justify-between items-center" style={{boxShadow: '0 0 30px rgba(6, 182, 212, 0.2)'}}>
+            <a href="/" className="font-bold text-cyan-300 neon-text hover:text-cyan-200 transition-colors">Ultimate Tic Tac Toe</a>
             <UserBar />
           </header>
           {children}
